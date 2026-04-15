@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Omar Accountancy Services - Expert UK accountants based in London. Specialising in tax planning, bookkeeping, VAT, payroll, and self assessment for businesses and individuals.">
+  <meta name="theme-color" content="#0a2540">
+  <title>Omar Accountancy Services | UK Accountants in London</title>
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #1e2a3e;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* vibrant + professional color palette */
+    :root {
+      --primary-navy: #0a2540;
+      --primary-dark: #0f2c3f;
+      --accent-vibrant: #f08c2e;
+      --accent-hover: #dd7517;
+      --accent-soft: #fff1e6;
+      --gray-light: #f8fafc;
+      --gray-border: #e9edf2;
+      --text-muted: #4a5b6e;
+      --shadow-sm: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+      --shadow-md: 0 20px 25px -12px rgba(0, 0, 0, 0.08);
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* header / navbar */
+    .navbar {
+      background: white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(0px);
+      border-bottom: 1px solid var(--gray-border);
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 1rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .logo h1 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #1e4a76 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.3px;
+    }
+    .logo span {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--accent-vibrant);
+      display: block;
+      letter-spacing: 0.4px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      align-items: center;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: var(--primary-navy);
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-vibrant);
+    }
+    .nav-links .btn-outline {
+      border: 1.5px solid var(--accent-vibrant);
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      color: var(--accent-vibrant);
+      background: transparent;
+      transition: 0.2s;
+    }
+    .nav-links .btn-outline:hover {
+      background: var(--accent-vibrant);
+      color: white;
+      border-color: var(--accent-vibrant);
+    }
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--primary-navy);
+    }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-block;
+      background: var(--accent-vibrant);
+      color: white;
+      font-weight: 600;
+      padding: 0.9rem 2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: 0.25s;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: 0 2px 6px rgba(240, 140, 46, 0.2);
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -5px rgba(240, 140, 46, 0.3);
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 1.5px solid var(--primary-navy);
+      color: var(--primary-navy);
+      padding: 0.8rem 1.8rem;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.2s;
+      display: inline-block;
+    }
+    .btn-secondary:hover {
+      background: var(--primary-navy);
+      color: white;
+      border-color: var(--primary-navy);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #fef9f0 0%, #ffffff 100%);
+      padding: 5rem 0 6rem;
+    }
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .hero-content {
+      flex: 1;
+    }
+    .hero-badge {
+      background: var(--accent-soft);
+      color: var(--accent-vibrant);
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--primary-navy);
+      margin-bottom: 1.2rem;
+    }
+    .hero-highlight {
+      color: var(--accent-vibrant);
+    }
+    .hero-content p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin: 1.5rem 0 2rem;
+      max-width: 90%;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .hero-stats {
+      flex: 0.8;
+      background: white;
+      padding: 2rem;
+      border-radius: 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--gray-border);
+    }
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.8rem;
+    }
+    .stat-icon i {
+      font-size: 2rem;
+      color: var(--accent-vibrant);
+    }
+    .stat-text strong {
+      font-size: 1.4rem;
+      font-weight: 800;
+      display: block;
+    }
+    /* sections */
+    section {
+      padding: 5rem 0;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1rem;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto 3rem auto;
+      font-size: 1.1rem;
+    }
+    /* about */
+    .about-grid {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .about-text {
+      flex: 1.2;
+    }
+    .about-text h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .about-text p {
+      margin-bottom: 1.2rem;
+      color: var(--text-muted);
+    }
+    .feature-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .feature-list li {
+      list-style: none;
+      background: var(--gray-light);
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    .about-icon {
+      flex: 0.8;
+      background: var(--accent-soft);
+      padding: 2rem;
+      border-radius: 2rem;
+      text-align: center;
+    }
+    .about-icon i {
+      font-size: 5rem;
+      color: var(--accent-vibrant);
+    }
+    /* services grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    .service-card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      transition: 0.25s ease;
+      border: 1px solid var(--gray-border);
+      box-shadow: var(--shadow-sm);
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: #ffdec2;
+    }
+    .service-icon {
+      background: var(--accent-soft);
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .service-icon i {
+      font-size: 2rem;
+      color: var(--accent-vibrant);
+    }
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+    }
+    .service-card p {
+      color: var(--text-muted);
+    }
+    /* testimonials */
+    .testimonials {
+      background: var(--gray-light);
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .testimonial-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-border);
+    }
+    .testimonial-card i.fa-quote-left {
+      color: var(--accent-vibrant);
+      font-size: 1.8rem;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+    .testimonial-card p {
+      font-style: normal;
+      margin: 1rem 0 1.5rem;
+      color: #2c3e4e;
+    }
+    .client-info h4 {
+      font-weight: 700;
+    }
+    .client-info span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    /* contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+    }
+    .contact-details {
+      background: var(--primary-navy);
+      color: white;
+      padding: 2rem;
+      border-radius: 1.8rem;
+    }
+    .contact-details h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .contact-info-item {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin: 1.5rem 0;
+    }
+    .contact-info-item i {
+      font-size: 1.4rem;
+      width: 2rem;
+      color: var(--accent-vibrant);
+    }
+    .contact-info-item p, .contact-info-item a {
+      color: #eef2f5;
+      text-decoration: none;
+    }
+    .office-hours {
+      margin-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: 1.5rem;
+    }
+    .contact-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 1.8rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--gray-border);
+    }
+    .form-group {
+      margin-bottom: 1.3rem;
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 1rem;
+      border: 1px solid var(--gray-border);
+      font-family: inherit;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent-vibrant);
+      box-shadow: 0 0 0 3px rgba(240, 140, 46, 0.2);
+    }
+    .form-status {
+      margin-top: 1rem;
+      font-weight: 500;
+    }
+    footer {
+      background: #0b1a27;
+      color: #cddbe9;
+      padding: 3rem 0 2rem;
+      text-align: center;
+    }
+    .footer-content p {
+      margin: 0.5rem 0;
+    }
+    .footer-social a {
+      color: #cddbe9;
+      font-size: 1.3rem;
+      margin: 0 0.8rem;
+      transition: 0.2s;
+      display: inline-block;
+    }
+    .footer-social a:hover {
+      color: var(--accent-vibrant);
+    }
+    /* responsive */
+    @media (max-width: 880px) {
+      .container {
+        padding: 0 1.5rem;
+      }
+      .hamburger {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: white;
+        padding: 1.5rem 0;
+        gap: 1.2rem;
+        align-items: flex-start;
+        margin-top: 1rem;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .nav-container {
+        flex-wrap: wrap;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-content p {
+        max-width: 100%;
+      }
+    }
+    @media (max-width: 640px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-stats {
+        flex: auto;
+        width: 100%;
+      }
+      .hero-grid {
+        flex-direction: column;
+      }
+      .section-title {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <h1>Omar Accountancy <span>Services</span></h1>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="btn-outline">Free Consultation</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero section -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge"><i class="fas fa-chart-line"></i> Trusted UK accountants</div>
+          <h1>Expert accounting & <span class="hero-highlight">tax solutions</span> for your success</h1>
+          <p>Based in London, Omar Accountancy Services delivers professional, proactive financial guidance for businesses and individuals across the UK. HMRC compliant, MTD ready.</p>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn-primary"><i class="fas fa-calendar-check"></i> Free consultation</a>
+            <a href="#services" class="btn-secondary">Explore services</a>
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+            <div class="stat-text"><strong>500+</strong> <span>Business clients</span></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon"><i class="fas fa-chart-simple"></i></div>
+            <div class="stat-text"><strong>99%</strong> <span>Client satisfaction</span></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon"><i class="fas fa-clock"></i></div>
+            <div class="stat-text"><strong>Same-day</strong> <span>response guarantee</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <div class="section-title">Who we are</div>
+        <div class="section-sub">We combine modern accounting expertise with a genuine partnership approach</div>
+        <div class="about-grid">
+          <div class="about-text">
+            <h3>Your trusted London accountants</h3>
+            <p>Omar Accountancy Services is a UK-based firm located at <strong>28 Garden House, The Grange, London</strong>. We specialise in providing tailored financial and tax solutions for SMEs, contractors, and private clients. With deep knowledge of UK tax regulations and digital accounting, we help you stay compliant and drive growth.</p>
+            <p>Our vibrant team is dedicated to clear communication, fixed-fee transparency, and proactive advice — from year-end accounts to real-time tax planning.</p>
+            <ul class="feature-list">
+              <li><i class="fas fa-check-circle" style="color:#f08c2e;"></i> HMRC recognised</li>
+              <li><i class="fas fa-check-circle" style="color:#f08c2e;"></i> Xero & QuickBooks experts</li>
+              <li><i class="fas fa-check-circle" style="color:#f08c2e;"></i> Making Tax Digital ready</li>
+              <li><i class="fas fa-check-circle" style="color:#f08c2e;"></i> Personal & corporate tax</li>
+            </ul>
+          </div>
+          <div class="about-icon">
+            <i class="fas fa-building-user"></i>
+            <p style="margin-top: 1rem; font-weight: 500; color:var(--primary-navy);">Based in London · Serving the UK</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" style="background: #fefcf8;">
+      <div class="container">
+        <div class="section-title">Tailored accounting services</div>
+        <div class="section-sub">We cover every angle of your financial needs — from daily bookkeeping to strategic tax planning</div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-calculator"></i></div>
+            <h3>Tax Planning & Compliance</h3>
+            <p>Minimise liabilities and ensure full HMRC compliance. Personal & corporate tax strategies, CGT, and inheritance tax advice.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-book-open"></i></div>
+            <h3>Accounting & Bookkeeping</h3>
+            <p>Accurate monthly/quarterly records, management accounts, and real-time financial insights using cloud software.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-file-invoice"></i></div>
+            <h3>VAT & Making Tax Digital</h3>
+            <p>Full VAT return preparation, MTD submissions, and advisory on partial exemption, flat rate schemes.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-users"></i></div>
+            <h3>Payroll & Pensions</h3>
+            <p>RTI submissions, auto-enrolment, pension schemes, and payroll management for startups to established businesses.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-user-check"></i></div>
+            <h3>Self Assessment</h3>
+            <p>Complete support for sole traders, partnerships and landlords. On-time filing and tax efficiency reviews.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-building"></i></div>
+            <h3>Company Secretarial</h3>
+            <p>Confirmation statements, company formations, and statutory filings with Companies House.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-title">What our clients say</div>
+        <div class="section-sub">Real feedback from businesses we've helped across London and beyond</div>
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <i class="fas fa-quote-left"></i>
+            <p>"Omar Accountancy Services transformed our financial reporting. They're responsive, proactive and saved us thousands in tax. Highly recommend!"</p>
+            <div class="client-info">
+              <h4>— Sarah Mitchell</h4>
+              <span>Founder, Mitchell Creative Studio</span>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <i class="fas fa-quote-left"></i>
+            <p>"Professional, transparent and always ahead of deadlines. Their Making Tax Digital support made VAT returns effortless. A fantastic partner."</p>
+            <div class="client-info">
+              <h4>— James Holloway</h4>
+              <span>MD, Holloway Construction Ltd</span>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <i class="fas fa-quote-left"></i>
+            <p>"I switched to Omar Accountancy for self assessment and couldn't be happier. The team is approachable, modern and truly cares."</p>
+            <div class="client-info">
+              <h4>— Priya Kapoor</h4>
+              <span>Chartered Consultant</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section + address -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-title">Let's talk</div>
+        <div class="section-sub">Reach out for a free initial consultation — we’re based in London and ready to help</div>
+        <div class="contact-grid">
+          <div class="contact-details">
+            <h3><i class="fas fa-map-marker-alt"></i> Visit our office</h3>
+            <div class="contact-info-item">
+              <i class="fas fa-location-dot"></i>
+              <p>28 Garden House, The Grange, London, United Kingdom</p>
+            </div>
+            <div class="contact-info-item">
+              <i class="fas fa-phone-alt"></i>
+              <p><a href="tel:+442079460123" style="color:white;">+44 20 7946 0123</a></p>
+            </div>
+            <div class="contact-info-item">
+              <i class="fas fa-envelope"></i>
+              <p><a href="mailto:info@omaraccountancy.co.uk" style="color:white;">info@omaraccountancy.co.uk</a></p>
+            </div>
+            <div class="office-hours">
+              <i class="fas fa-clock"></i> <strong>Office hours:</strong> Monday - Friday: 9:00am – 5:30pm<br>
+              Weekend & evening appointments available on request.
+            </div>
+            <div class="office-hours" style="margin-top: 1rem;">
+              <i class="fab fa-google"></i> <a href="https://maps.google.com/?q=28+Garden+House+The+Grange+London" target="_blank" style="color:var(--accent-vibrant); text-decoration:underline;">Get directions on Google Maps →</a>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h3 style="margin-bottom: 1rem; font-weight: 700;">Send us a message</h3>
+            <form id="contactForm">
+              <div class="form-group">
+                <input type="text" id="name" placeholder="Full name" required>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" placeholder="Email address" required>
+              </div>
+              <div class="form-group">
+                <input type="tel" id="phone" placeholder="Phone number">
+              </div>
+              <div class="form-group">
+                <textarea rows="4" id="message" placeholder="How can we help you?"></textarea>
+              </div>
+              <button type="submit" class="btn-primary" style="width:100%;"><i class="fas fa-paper-plane"></i> Send enquiry</button>
+              <div id="formStatus" class="form-status"></div>
+            </form>
+            <p style="font-size:0.8rem; margin-top: 1rem; color:var(--text-muted);">We'll respond within 24 hours. Your data is confidential.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-social">
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p>© 2025 Omar Accountancy Services — Based at 28 Garden House, The Grange, London</p>
+      <p>Expert UK accounting & tax support | <i class="fas fa-heart" style="color:#f08c2e;"></i> Designed by <strong>Sitesprint</strong> — web development for accounting firms</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // close mobile menu on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // Active nav highlight on scroll (simple)
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+          current = section.getAttribute('id');
+        }
+      });
+      navItems.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        } else if (current === 'home' && link.getAttribute('href') === '#home') {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Contact form submission simulation (fully functional front-end)
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      if (!name || !email) {
+        formStatus.innerHTML = '<span style="color:#d9534f;"><i class="fas fa-exclamation-circle"></i> Please fill in name and email.</span>';
+        return;
+      }
+      // simulated send
+      formStatus.innerHTML = '<span style="color:#2e7d32;"><i class="fas fa-spinner fa-pulse"></i> Sending message...</span>';
+      setTimeout(() => {
+        formStatus.innerHTML = '<span style="color:#2e7d32;"><i class="fas fa-check-circle"></i> Thank you! Omar Accountancy Services will get back to you shortly.</span>';
+        contactForm.reset();
+        setTimeout(() => {
+          formStatus.innerHTML = '';
+        }, 5000);
+      }, 800);
+    });
+
+    // Smooth scroll for all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === "#" || href === "") return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
